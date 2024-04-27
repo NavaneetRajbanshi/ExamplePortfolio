@@ -1,0 +1,83 @@
+/* general changes */
+h3{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+body{
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar{
+    border-bottom: #e600e6 solid 1px;
+}
+
+.navbar-brand{
+    color: #e600e6 !important;
+    font-size: 24px;
+}
+
+.nav-link{
+    text-transform: uppercase;
+}
+
+.nav-link:hover{
+    color: #e600e6 !important;
+}
+
+#header{
+    background: url(../images/wall12.png) no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+h1{
+    margin-top: 20px;
+}
+
+#header .overlay{
+    background-color: rgba(26, 0, 26, .4);
+    height: 100vh;
+}
+
+.btn-outline-success{
+    cursor: pointer;
+}
+
+.btn-outline-success:hover{
+    background-color: #e600e6;
+}
+
+#features .fa-solid {
+    font-size: 40px;
+}
+
+#features .fa-brands{
+    font-size: 40px;
+}
+
+/* features section */
+
+#features i{
+    color: #e600e6;
+    cursor: pointer;
+}
+
+#features h3:hover{
+    color: #e600e6;
+    cursor: pointer;
+}
+
+#work{
+    background: url(https://youtu.be/wjCJv4W4kvw?si=rJjUbrW5ORCjrqtb);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#work i{
+    color: #e600e6;
+}
