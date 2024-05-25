@@ -133,7 +133,44 @@ colors.enqueue("Green");
 
 console.log(colors.dequeue());
 
+10.
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+        
+    }
+}
+class LinkedList {
+    constructor() {
+        this.head = null;
+    }
+    append(a){
+        let b = new Node(a);
 
+        if (this.head === null){
+            this.head = b;
+            return;
+        }
+        let last = this.head;
+        while(last.next != null){
+            last = last.next;
+        }
+        last.next = b;
+    }
+    printList(){
+        let current = this.head;
+        while (current){
+            console.log(current.data);
+            current = current.next;
+        }
+    }
+}
+let list = new LinkedList();
+list.append(1);
+list.append(2);
+list.append(3);
+list.printList();
 
 11.
 
@@ -154,10 +191,11 @@ string value gets converted and gets multipied
 
 console.log([] + {});
 [object Object]
-
+The array[] converts to empty string and object {} converts to string [object Object] and with + operator both get concatinate, in which empty string and [object Object] gets concatinated that results [object Object]
 
 console.log({} + []);
 [object Object]
+This sinario is simiar to above where the result is similar as the order od concatination doesnt change the final StaticRange. 
 
 
 12.
@@ -170,4 +208,5 @@ function arguments: In non-strict mode, it is possible to declare multiple funct
 deleting properties: In non-strict mode, it is possible to delete properties from objects that are not configurable. This can lead to unexpected behavior and should be avoided. In strict mode, attempting to delete non-configurable properties will result in an error.
 
 
+13. 
 
