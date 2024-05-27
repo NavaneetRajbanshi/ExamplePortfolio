@@ -210,3 +210,117 @@ deleting properties: In non-strict mode, it is possible to delete properties fro
 
 13. 
 
+function deepEqual(a, b) {
+    if (a === b ){
+        return true;
+    }
+    if (typeof a !== 'object' || a === null || typeof b !== 'object' ||
+        b === null) {
+        return false;
+        }
+    let keysA = Object.keys(a);
+    let keysB = Object.keys(b);
+
+    if (keysA.length !== keysB.length) {
+        return false;
+    }
+    for (let key of keysA) {
+        if (!keysB.includes(key) || !deepEqual(a[key], b[key])) {
+            return false;
+        }
+}
+    return true;
+}
+console.log(deepEqual([1, 2, 3], [1, 2, 3]));
+
+14. 
+
+function groupBy(array, property) {
+    let groupedResult = {};
+
+    array.forEach(item => {
+        let key = item[property];
+        groupedResult[key] = groupedResult[key] || [];
+        groupedResult[key].push(item);
+    });
+    let resultArray = Object.values(groupedResult);
+    return resultArray;
+}
+let fruits = [
+  { name: "Apple", fruit_color: "Red" },
+  { name: "Banana", fruit_color: "Yellow" },
+  { name: "Cherry", fruit_color: "Red" },
+  { name: "Lemon", fruit_color: "Yellow" },
+  { name: "Grape", fruit_color: "Purple" }
+];
+
+let groupedByColor = groupBy(fruits, "fruit_color");
+console.log(groupedByColor);
+
+15.
+
+function removeElements(array, predicate) {
+    for (let i = array.length - 1; i >= 0; i--) {
+        if (predicate(array[i])) {
+            array.splice(i, 1);
+        }
+    }
+    return array;
+}
+
+let numbers = [1, 2, 3, 4, 5, 6];
+let isEven = (num) => num % 2 === 0;
+removeElements(numbers, isEven);
+console.log(numbers);
+
+16. 
+
+function chunkArray(a, b) {
+    let chunkedArray = [];
+    for (let i = 0; i < a.length; i += b) {
+        chunkedArray.push(a.slice(i, i + b));
+    }
+    console.log(chunkedArray);
+}
+ chunkArray([1, 2, 3, 4, 5, 6, 7, 8], 4);
+
+ 17. 
+
+ function haveCommonItems(arr1, arr2) {
+    let set1 = new Set(arr1);
+    let commonItems = arr2.filter(item => set1.has(item));
+    return commonItems;
+  }
+  let array1 = [1, 2, 3, 4, 5];
+  let array2 = [5, 6, 7, 8, 9];
+  let result = haveCommonItems(array1, array2);
+  console.log(result);
+
+  18.
+
+  function transposeMatrix(matrix) {
+    let rows = matrix.length;
+    let cols = matrix[0].length;
+  
+    let result = [];
+    for(let j = 0; j < cols; j++) {
+      result[j] = [];
+    }
+  
+    for(let i = 0; i < rows; i++) {
+      for(let j = 0; j < cols; j++) {
+        result[j][i] = matrix[i][j];
+      }
+    }
+  
+    return result;
+  }
+  let matrix1 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+  ];
+  let transposedMatrix = transposeMatrix(matrix1);
+  console.log(transposedMatrix);
+
+
